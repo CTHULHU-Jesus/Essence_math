@@ -65,7 +65,6 @@ fn apply_calc(s: &str) -> Html {
     html! {
     <blockquote class = {class}>
         <p> {inp} </p>
-        <br/>
         <p> {out} </p>
     </blockquote>
         }
