@@ -1,11 +1,12 @@
 .PHONY: all
-all: index.scss bundle.js index.html
+all: index.css bundle.js index.html
 
 
 index.html: web/index.html
 	cp $< $@
 
-index.scss: web/index.scss
+index.css: web/index.css
+	$(MAKE) -C web index.css
 	cp $< $@
 
 bundle.js: web/bundle.js
