@@ -59,7 +59,7 @@ fn apply_calc(s: &str) -> Html {
     let class = if e.is_ok() { "value" } else { "error" };
     let out = match e {
         Ok(e) => format!("= {}", e.eval()),
-        Err(_) => "Parse Error".to_string(),
+        Err(_) => " ! Parse Error".to_string(),
     };
     let inp = format!("> {}", s);
     html! {
