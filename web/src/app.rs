@@ -1,7 +1,7 @@
-use essence_math::{CalqAst,Essence, ESSENCE_ORDER};
+use essence_math::{CalqAst, Essence, ESSENCE_ORDER};
 use std::str::FromStr;
-use yew::prelude::*;
 use web_sys::{console::log_1, Event, HtmlInputElement, HtmlTextAreaElement, InputEvent};
+use yew::prelude::*;
 use yew::{html, html::Scope, Component, Context, Html};
 
 pub struct App {
@@ -56,18 +56,19 @@ fn place_linebreaks(s: &str) -> Vec<Html> {
 
 fn apply_calc(s: &str) -> Html {
     let e = CalqAst::from_str(s);
+    let class = if e.is_ok() { "value" } else { "error" };
     let out = match e {
         Ok(e) => format!("= {}", e.eval()),
         Err(_) => "Parse Error".to_string(),
     };
     let inp = format!("> {}", s);
     html! {
-<>
-    <p> {inp} </p>
-    <br/>
-    <p> {out} </p>
-</>
-    }
+    <blockquote class = {class}>
+        <p> {inp} </p>
+        <br/>
+        <p> {out} </p>
+    </blockquote>
+        }
 }
 
 impl Component for App {
@@ -85,7 +86,8 @@ impl Component for App {
         match msg {
             Msg::Input(s) => {
                 if complete_input(&s) {
-                    self.log.insert(0, apply_calc(&s))
+                    self.log.push(apply_calc(&s));
+                    self.input = "".to_string();
                 } else {
                     self.input = s;
                 }
@@ -94,8 +96,6 @@ impl Component for App {
         true
     }
     fn view(&self, ctx: &yew::Context<Self>) -> Html {
-
-    
         let oninput = ctx.link().callback(move |e: InputEvent| {
             let input: HtmlTextAreaElement = e.target_unchecked_into();
             Msg::Input(input.value())
