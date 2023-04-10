@@ -234,7 +234,7 @@ impl Essence {
     const SUN_LIGHT: Self = Self::new(1, 1, 0);
     const SKY: Self = Self::new(1, 0, 1);
     const PURITY_HEALING: Self = Self::new(1, -1, 0);
-    const GRAVITY: Self = Self::new(1, -1, 0);
+    const GRAVITY: Self = Self::new(1, 0, -1);
     const HEAT: Self = Self::new(0, 1, 1);
     const ICE: Self = Self::new(0, -1, 1);
     const MUD: Self = Self::new(0, -1, -1);

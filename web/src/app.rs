@@ -58,7 +58,7 @@ fn apply_calc(s: &str) -> Html {
     let e = CalqAst::from_str(s);
     let class = if e.is_ok() { "value" } else { "error" };
     let out = match e {
-        Ok(e) => format!("= {}", e.eval()),
+        Ok(e) => format!(" = {}", e.eval()),
         Err(_) => " ! Parse Error".to_string(),
     };
     let inp = format!("> {}", s);
