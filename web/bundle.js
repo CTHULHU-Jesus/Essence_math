@@ -541,7 +541,7 @@
     }
 
     async function main() {
-      await init("./pkg/web.wasm");
+      await init("web/pkg/web.wasm");
       run_app();
     }
     main();
