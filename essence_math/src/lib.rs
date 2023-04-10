@@ -67,13 +67,15 @@ lazy_static! {
     };
     static ref ESSENCE_SET :HashSet<Essence>= ESSENCE_STRING_MAP.keys().cloned().collect();
     pub static ref ESSENCE_ORDER :[Essence;27]= [
-            // Base kinds
-            Essence::YIN,
-            Essence::YANG,
-            Essence::WATER,
-            Essence::FIRE,
-            Essence::EARTH,
-            Essence::AIR,
+            // Triple Kinds
+            Essence::LIGHTNING,
+            Essence::CLOUD_MIST,
+            Essence::WOOD_LIFE,
+            Essence::METAL,
+            Essence::DESTRUCTION_DEATH,
+            Essence::ACID_CORROSION,
+            Essence::MIASMA,
+            Essence::FORCE,
             // Double Kinds
             Essence::SUN_LIGHT,
             Essence::SKY,
@@ -87,15 +89,13 @@ lazy_static! {
             Essence::ABYSS_DARKNESS_MOON,
             Essence::VACUUM_VOID,
             Essence::STONE,
-            // Triple Kinds
-            Essence::LIGHTNING,
-            Essence::CLOUD_MIST,
-            Essence::WOOD_LIFE,
-            Essence::METAL,
-            Essence::DESTRUCTION_DEATH,
-            Essence::ACID_CORROSION,
-            Essence::MIASMA,
-            Essence::FORCE,
+            // Base kinds
+            Essence::YIN,
+            Essence::YANG,
+            Essence::WATER,
+            Essence::FIRE,
+            Essence::EARTH,
+            Essence::AIR,
             // unaligned
             Essence::UNALIGNED,
         ];
@@ -133,7 +133,7 @@ impl Essence {
 
     /// Removes |other| from |self| by subtracting like elements
     pub const fn remove(&self, other: &Self) -> Self {
-                Essence {
+        Essence {
             yin_yang: self.yin_yang - other.yin_yang,
             water_fire: self.water_fire - other.water_fire,
             earth_air: self.earth_air - other.earth_air,

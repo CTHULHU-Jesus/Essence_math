@@ -34,11 +34,7 @@ html, body {
 }
 .infowindow .helplist {
   display: grid;
-  grid-template-columns: 35% 65%;
-}
-.infowindow .helplist h1, .infowindow .helplist h2, .infowindow .helplist h3, .infowindow .helplist h4 {
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-template-columns: 100%;
 }
 .term {
   display: flex;

@@ -35,11 +35,11 @@ html, body {
 		.helplist {
 
 				display: grid;
-				grid-template-columns: 35% 65%;
-				h1,h2,h3,h4 {
-						grid-column-start: 1;
-						grid-column-end: 3;
-				}
+				grid-template-columns: 100%;
+				// h1,h2,h3,h4 {
+				// 		grid-column-start: 1;
+				// 		grid-column-end: 3;
+				// }
 				p {
 				}
 		}

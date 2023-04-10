@@ -28,7 +28,7 @@ fn info_window() -> Html {
     let example1 = apply_calc("4*fire+air");
     let example2 = apply_calc("moon-yin");
     let mut all_essence = "".to_string();
-    for e in ESSENCE_ORDER.iter() {
+    for e in ESSENCE_ORDER.iter().rev() {
         let s: String = format!("{e}\n");
         all_essence.push_str(&s);
     }
@@ -37,6 +37,7 @@ fn info_window() -> Html {
         <div class="helplist">
             <h3>{blockquote("Examples")}</h3>
             <p>{blockquote2(example1)}</p>
+            <br/>
             <p>{blockquote2(example2)}</p>
             <h3>{blockquote("All Essence")}</h3>
             <p>{blockquote(&all_essence)}</p>
