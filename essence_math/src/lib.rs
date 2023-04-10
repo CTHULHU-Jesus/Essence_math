@@ -206,6 +206,9 @@ impl Essence {
                 }
             }
         }
+        if s == "".to_string() {
+            s = Self::UNALIGNED.to_string_simple();
+        }
         return s;
     }
     /// multiply the amount of essence by  |i|

@@ -33,6 +33,7 @@ html, body {
   background: #666;
 }
 .infowindow .helplist {
+  margin: 0px;
   display: grid;
   grid-template-columns: 100%;
 }

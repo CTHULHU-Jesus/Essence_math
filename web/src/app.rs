@@ -37,7 +37,6 @@ fn info_window() -> Html {
         <div class="helplist">
             <h3>{blockquote("Examples")}</h3>
             <p>{blockquote2(example1)}</p>
-            <br/>
             <p>{blockquote2(example2)}</p>
             <h3>{blockquote("All Essence")}</h3>
             <p>{blockquote(&all_essence)}</p>
