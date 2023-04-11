@@ -37,6 +37,13 @@ html, body {
   display: grid;
   grid-template-columns: 100%;
 }
+.infowindow .helplist blockquote {
+  margin: 0px;
+}
+.infowindow .helplist p {
+  margin: 0px;
+}
+
 .term {
   display: flex;
   align-self: stretch;

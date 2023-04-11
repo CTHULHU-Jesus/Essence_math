@@ -41,7 +41,11 @@ html, body {
 				// 		grid-column-start: 1;
 				// 		grid-column-end: 3;
 				// }
+				blockquote {
+						margin: 0px;
+				}
 				p {
+						margin: 0px;
 				}
 		}
 }
